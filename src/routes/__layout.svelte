@@ -1,7 +1,7 @@
 <script>
 	// @ts-nocheck
 
-	import Nav from '../components/Nav.svelte';
+	import Nav from '$lib/components/Nav.svelte';
 	import '../app.css';
 </script>
 

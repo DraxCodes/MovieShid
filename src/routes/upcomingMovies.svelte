@@ -6,8 +6,8 @@
 	// @ts-nocheck
 	import '../app.css';
 	import { onMount } from 'svelte';
-	import Loader from '../components/Loader.svelte';
-	import MovieCard from '../components/MovieCard.svelte';
+	import Loader from '$lib/components/Loader.svelte';
+	import MovieCard from '$lib/components/MovieCard.svelte';
 
 	let data = [];
 	let loading = false;

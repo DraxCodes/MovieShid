@@ -1,5 +1,5 @@
 <script>
-	import '../app.css';
+	import '../../app.css';
 	import { Film } from 'svelte-heros';
 </script>
 
