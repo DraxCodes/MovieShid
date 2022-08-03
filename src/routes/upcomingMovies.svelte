@@ -7,7 +7,7 @@
 	import '../app.css';
 	import { onMount } from 'svelte';
 	import Loader from '$lib/components/Loader.svelte';
-	import MovieCard from '$lib/components/MovieCard.svelte';
+	import SmallMovieCard from '$lib/components/SmallMovieCard.svelte';
 
 	let data = [];
 	let loading = false;
@@ -37,11 +37,11 @@
 	<h1>Failed to load data, please report this issue to the owner.</h1>
 {:else}
 	<div
-		class="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 auto-rows-max sm:grid-cols-3"
+		class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 auto-rows-max sm:grid-cols-1"
 	>
 		{#each data as item}
-			<div class="mb-24 mr-5 ml-5 mt-5">
-				<MovieCard movie={item} />
+			<div class="mr-5 ml-5 mt-10">
+				<SmallMovieCard movie={item} />
 			</div>
 		{/each}
 	</div>
