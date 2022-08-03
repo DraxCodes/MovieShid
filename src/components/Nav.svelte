@@ -20,7 +20,7 @@
 				<li class="mr-3">
 					<a
 						class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
-						href="/about">About</a
+						href="/upcomingMovies">Upcoming</a
 					>
 				</li>
 			</ul>

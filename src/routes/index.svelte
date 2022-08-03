@@ -1,3 +1,6 @@
+<script>
+</script>
+
 <svelte:head>
     <title>Welcome To MovieShid</title>
 </svelte:head>

@@ -30,6 +30,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"svelte-heros": "^2.3.3"
+		"svelte-heros": "^2.3.3",
+		"tailwind-scrollbar-hide": "^1.1.7"
 	}
 }
