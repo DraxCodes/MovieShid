@@ -15,7 +15,7 @@
 
 	onMount(async () => {
 		loading = true;
-		const resp = await fetch('/upcomingMovies.json');
+		const resp = await fetch('/api/upcomingMovies.json');
 		if (resp.ok === false) {
 			failed = true;
 		} else {
