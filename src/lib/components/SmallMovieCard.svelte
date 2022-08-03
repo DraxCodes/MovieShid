@@ -2,7 +2,7 @@
 	export let movie;
 </script>
 
-<a href="/movies/{movie.id}">
+<a href="/movie/{movie.id}">
 	<div class="relative">
 		<section
 			class="bg-slate-800 h-64 mb-5 rounded-lg flex overflow-hidden shadow-black shadow-md opacity-95 hover:opacity-100"

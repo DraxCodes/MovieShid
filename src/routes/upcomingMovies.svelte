@@ -3,7 +3,6 @@
 </script>
 
 <script>
-	// @ts-nocheck
 	import '../app.css';
 	import { onMount } from 'svelte';
 	import Loader from '$lib/components/Loader.svelte';
