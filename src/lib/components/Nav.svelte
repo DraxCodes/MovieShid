@@ -3,7 +3,7 @@
 	import { Film } from 'svelte-heros';
 </script>
 
-<nav class="bg-slate-300 p-2 mt-0 fixed w-full z-10 top-0">
+<!-- <nav class="bg-gray-900 p-2 mt-0 fixed w-full z-10 top-0">
 	<div class="container mx-auto flex items-center">
 		<div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold">
 			<a class="text-white no-underline hover:text-white hover:no-underline" href="/">
@@ -26,4 +26,19 @@
 			</ul>
 		</div>
 	</div>
-</nav>
+</nav> -->
+
+<div class="navbar bg-gray-900">
+	<div class="flex-1">
+		<a href="/" class="btn btn-ghost normal-case text-xl">
+			<Film size="40" class="mr-2" />
+			Movie Shid
+		</a>
+	</div>
+	<div class="flex-none">
+		<ul class="menu menu-horizontal p-0">
+			<li><a class="btn btn-ghost" href="/">Home</a></li>
+			<li><a class="btn btn-ghost" href="/movie/upcoming">Upcoming</a></li>
+		</ul>
+	</div>
+</div>

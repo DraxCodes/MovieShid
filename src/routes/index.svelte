@@ -8,7 +8,10 @@
 	<title>Welcome To MovieShid</title>
 </svelte:head>
 
-<section class="bg-center bg-cover" style="background-image: url({bgImage});">
+<section
+	class="bg-center bg-cover shadow-2xl drop-shadow-none"
+	style="background-image: url({bgImage});"
+>
 	<div class="bg-black bg-opacity-80">
 		<div
 			class="grid max-w-screen-xl px-4 py-8 mx-auto lg:ga xl:gap-0 lg:py-16 lg:grid-cols-12 overflow-y-scroll scrollbar-hide"

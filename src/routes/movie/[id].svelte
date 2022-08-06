@@ -1,6 +1,13 @@
 <script>
 	export let movie;
 	const bgImage = `https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces${movie.backdrop_path}`;
+	console.log(movie);
+
+	const formatter = new Intl.NumberFormat('en-us', {
+		style: 'currency',
+		currency: 'USD',
+		maximumSignificantDigits: 5
+	});
 </script>
 
 <svelte:head>
@@ -23,35 +30,83 @@
 				>
 					{movie.overview}
 				</p>
-				<div class="flex items-center">
-					<svg
-						aria-hidden="true"
-						class="w-5 h-5 text-yellow-400"
-						fill="currentColor"
-						viewBox="0 0 20 20"
-						xmlns="http://www.w3.org/2000/svg"
-						><title>Rating star</title><path
-							d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-						/></svg
-					>
-					<p class="ml-2 text-sm font-bold text-gray-900 dark:text-white">
-						{movie.vote_average.toFixed(1)}/10
-					</p>
-					<span class="w-1 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400" />
-					<p class="text-sm font-medium text-gray-900 pr-2 hover:no-underline dark:text-white">
-						{movie.vote_count} votes
-					</p>
-					<a
-						href="https://www.themoviedb.org/movie/{movie.id}/reviews"
-						class="text-sm font-medium text-gray-900 underline hover:no-underline dark:text-white"
-						>Reviews</a
-					>
+				<div class="hidden xl:inline-grid stats shadow mt-10 bg-black bg-opacity-40">
+					<div class="stat">
+						<div class="stat-figure text-primary">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="inline-block w-7 h-7 stroke-current"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+								stroke-width="2"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
+								/>
+							</svg>
+						</div>
+						<div class="stat-title">Language</div>
+						<div class="stat-value text-primary text-3xl">
+							{movie.spoken_languages[0].english_name}
+						</div>
+						<div class="stat-desc overflow-x-scroll scrollbar-hide">{movie.original_title}</div>
+					</div>
+
+					<div class="stat">
+						<div class="stat-figure text-secondary">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="inline-block w-8=7 h-7 stroke-current"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+								stroke-width="2"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+								/>
+							</svg>
+						</div>
+						<div class="stat-title">Revenue</div>
+						<div class="stat-value text-secondary text-3xl">{formatter.format(movie.revenue)}</div>
+						<div class="stat-desc">Since {movie.release_date}</div>
+					</div>
+
+					<div class="stat">
+						<div class="stat-figure text-secondary">
+							<a href="https://www.themoviedb.org/movie/{movie.id}/reviews">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									class="inline-block w-7 h-7 stroke-current"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke="currentColor"
+									stroke-width="2"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+									/>
+								</svg>
+							</a>
+						</div>
+						<div class="stat-title">Rating</div>
+						<div class="stat-value text-3xl">{movie.vote_average.toFixed(1)}/10</div>
+						<div class="stat-desc text-secondary">{movie.vote_count} votes</div>
+					</div>
 				</div>
 			</div>
 			<div class="hidden lg:mt-0 lg:col-span-4 lg:row-span-3 lg:flex">
 				<img
 					src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2{movie.poster_path}"
 					alt="{movie.title} poster"
+					class="border-[15px] rounded-2xl border-slate-900 border-opacity-40"
 				/>
 			</div>
 		</div>
