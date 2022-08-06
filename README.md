@@ -1,3 +1,5 @@
+![example](https://github.com/DraxCodes/MovieShid/blob/master/ezgif-5-4c9768f631.gif?raw=true)
+
 # Movie Shid
 
 Everything you need to build MovieShid
